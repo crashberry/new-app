@@ -2,7 +2,7 @@ export const Profile = () => {
   return (
     <div className="row">
       <div className="col-md-4">
-        <img src="" alt="" />
+        <img src="https://img.freepik.com/free-psd/3d-illustration-bald-person-with-glasses_23-2149436184.jpg" alt="User Avatar" width="100%" />
       </div>
       <div className="col-md-8">
         <p>
