@@ -6,7 +6,6 @@ export const Profile = (props) => {
     fontSize: "1.2rem"
   };
   let user = props.function();
-  console.log(user);
   return (
     <div className="row">
       <div className="col-md-4">
