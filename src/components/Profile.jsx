@@ -1,4 +1,8 @@
 export const Profile = () => {
+  const familyStyle = {
+    color: "blue",
+    fontSize: "1.2rem"
+  };
   return (
     <div className="row">
       <div className="col-md-4">
@@ -6,18 +10,18 @@ export const Profile = () => {
       </div>
       <div className="col-md-8">
         <p>
-          <span>Id:</span>
+          <span>Id: </span>
           <span>2</span>
         </p>
         <p>
-          <span>Email:</span>
+          <span>Email: </span>
           <span>vania@mail.ru</span>
         </p>
         <p>
-          <span>Фамилия и имя:</span>
+          <span style={familyStyle}>Фамилия и имя: </span>
           <span>Иван Иванов</span>
         </p>
-        <p>
+        <p style={{color: "red", fontSize: "1.5rem"}}>
           Рассказ о себе
         </p>
       </div>
