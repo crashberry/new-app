@@ -64,6 +64,6 @@ export async function getUsers() {
   let response = await fetch("https://p-host.lh1.in/getUsers");
   // let response = await fetch("https://066.napli.ru/getUsers");
   users = await response.json();
-  console.log(users);
+  // console.log(users);
   return users;
 }

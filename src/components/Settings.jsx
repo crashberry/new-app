@@ -22,7 +22,29 @@ export class Settings extends React.Component {
     this.state = { userRow: [] };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.function().then((users) => {
+      // console.log(users);
+
+      let usersCount = Object.keys(users).length;
+      let userRow = [];
+
+      for (let i = 0; i < usersCount; i++) {
+        userRow.push(
+          <TableRow
+            name={users[i].name}
+            lastname={users[i].lastname}
+            index={i}
+            key={i}
+            email={users[i].email}
+            id={users[i].id}
+          />
+        );
+      }
+
+      this.setState({ userRow: userRow });
+    });
+  }
 
   render() {
     return (
@@ -42,23 +64,3 @@ export class Settings extends React.Component {
     );
   }
 }
-
-export const Settings = (props) => {
-  let users = props.function();
-  // console.log(users);
-  let usersCount = Object.keys(users).length;
-  let userRow = [];
-
-  for (let i = 0; i < usersCount; i++) {
-    userRow.push(
-      <TableRow
-        name={users[i].name}
-        lastname={users[i].lastname}
-        index={i}
-        key={i}
-        email={users[i].email}
-        id={users[i].id}
-      />
-    );
-  }
-};
