@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 const TableRow = (props) => {
@@ -14,6 +15,33 @@ const TableRow = (props) => {
     </tr>
   );
 };
+
+export class Settings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { userRow: [] };
+  }
+
+  componentDidMount() {}
+
+  render() {
+    return (
+      <div className="row">
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Имя и фамилия</th>
+              <th scope="col">Email</th>
+              <th scope="col">id</th>
+            </tr>
+          </thead>
+          <tbody>{this.state.userRow}</tbody>
+        </table>
+      </div>
+    );
+  }
+}
 
 export const Settings = (props) => {
   let users = props.function();
@@ -33,20 +61,4 @@ export const Settings = (props) => {
       />
     );
   }
-
-  return (
-    <div className="row">
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Имя и фамилия</th>
-            <th scope="col">Email</th>
-            <th scope="col">id</th>
-          </tr>
-        </thead>
-        <tbody>{userRow}</tbody>
-      </table>
-    </div>
-  );
 };
